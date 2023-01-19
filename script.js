@@ -97,7 +97,7 @@ function handleSyms(id) {
 }
 
 symButtons.forEach(button => {
-    button.addEventListener('click', handleSyms);
+    button.addEventListener('click', e => handleSyms(e.target.id));
 });
 
 function handleDel(id) {
@@ -117,12 +117,12 @@ function handleDel(id) {
     }
 }
 
-delButton.addEventListener('click', handleDel);
+delButton.addEventListener('click', e => handleDel(e.target.id));
 
 function handleEq(id) {
     if (!['=', 'eq', 'Enter'].includes(id)) {
         return;
-    } 
+    }
     if (input.textContent.split(' ').length === 3) {
         doOperation(true);
     }
@@ -131,7 +131,7 @@ function handleEq(id) {
     }
 }
 
-eqButton.addEventListener('click', handleEq);
+eqButton.addEventListener('click', e => handleEq(e.target.id));
 
 function handleNum(id) {
     let append = '';
