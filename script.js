@@ -19,6 +19,10 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if (b === 0) {
+        console.error('The fuck man?');
+        return 0;
+    }
     return a / b;
 }
 
