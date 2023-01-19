@@ -74,7 +74,8 @@ function handleSyms(id) {
     if (!['div', 'mul', 'sub', 'add', '/', '*', '-', '+', 'x', 'X'].includes(id)) {
         return;
     }
-    if (output.textContent !== '' && input.textContent.includes(' ')) {
+    if (output.textContent !== '' && (input.textContent.includes(' ') || input.textContent === '|')) {
+        input.style.opacity = 1;
         input.textContent = output.textContent;
         output.textContent = '';
     }
@@ -203,6 +204,9 @@ function handleNum(id) {
             return;
     }
     input.style.opacity = 1;
+    if (input.textContent === '|') {
+        input.textContent = '';
+    }
     if (input.textContent === '|' && output.textContent !== '') {
         input.textContent = '';
         output.textContent = '';
