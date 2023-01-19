@@ -4,6 +4,16 @@ const eqButton = document.querySelector('#eq');
 const symButtons = document.querySelectorAll('.sym');
 const numButtons = document.querySelectorAll('.num');
 const input = document.querySelector('#calc-input');
+
+setInterval( () => {
+    if (input.textContent === '|') {
+        input.style.opacity = input.style.opacity === '0' ? '1' : '0';
+    }
+    else {
+        input.style.opacity = 1;
+    }
+}, 750);
+
 const output = document.querySelector('#calc-output');
 const body = document.querySelector('body');
 
@@ -192,7 +202,8 @@ function handleNum(id) {
         default:
             return;
     }
-    if ((input.textContent === '|' || output.textContent !== '') && !input.textContent.includes(' ')) {
+    input.style.opacity = 1;
+    if (input.textContent === '|' && output.textContent !== '') {
         input.textContent = '';
         output.textContent = '';
     }
