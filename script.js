@@ -24,18 +24,6 @@ function operate(f, a, b) {
     return f(a, b);
 }
 
-function disableSyms() {
-    symButtons.forEach(button => {
-        button.setAttribute('disabled', '');
-    });
-}
-
-function enableSyms() {
-    symButtons.forEach(button => {
-        button.removeAttribute('disabled');
-    });
-}
-
 opButtons.forEach(button => {
     button.addEventListener('click', e => {
         if (input.textContent === '|') {
@@ -46,7 +34,6 @@ opButtons.forEach(button => {
                 let amount = 1;
                 if (input.textContent.charAt(input.textContent.length - 1) === ' ') {
                     amount = 3;
-                    enableSyms();
                 }
                 input.textContent = input.textContent.substring(0, input.textContent.length - amount);
                 if (input.textContent.length === 0) {
@@ -55,15 +42,19 @@ opButtons.forEach(button => {
                 break;
             case 'div':
                 input.textContent += ' ÷ ';
+                refreshDot();
                 break;
             case 'mul':
                 input.textContent += ' × ';
+                refreshDot();
                 break;
             case 'sub':
                 input.textContent += ' - ';
+                refreshDot();
                 break;
             case 'add':
                 input.textContent += ' + ';
+                refreshDot();
                 break;
             case 'eq':
                 break;
@@ -109,8 +100,16 @@ numButtons.forEach(button => {
                 append = '9';
                 break;
             case 'dot':
+                const parts = input.textContent.split(' ');
+                if (input.textContent.includes(' ')) {
+                    if (parts[2].includes('.')) {
+                        break;
+                    }
+                }
+                else if (parts[0].includes('.')) {
+                    break;
+                }
                 append = '.'
-                e.target.setAttribute('disabled', '');
                 break;
         }
         input.textContent += append;
