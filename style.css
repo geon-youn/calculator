@@ -24,12 +24,14 @@ body {
     border-left: 2px #bcccb9 solid;
     border-radius: 0.25em;
     color: #374079;
+    overflow-wrap: break-word;
     font-weight: bold;
     margin: 5px;
     padding: 5px;
     gap: 20px;
     min-height: 75px;
     justify-content: space-between;
+    width: 216px;
 }
 
 #calc-output {
