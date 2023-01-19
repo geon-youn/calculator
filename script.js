@@ -64,7 +64,7 @@ function handleSyms(id) {
     if (!['div', 'mul', 'sub', 'add', '/', '*', '-', '+', 'x', 'X'].includes(id)) {
         return;
     }
-    if (output.textContent !== '') {
+    if (output.textContent !== '' && input.textContent.includes(' ')) {
         input.textContent = output.textContent;
         output.textContent = '';
     }
@@ -192,7 +192,7 @@ function handleNum(id) {
         default:
             return;
     }
-    if (input.textContent === '|' || output.textContent !== '') {
+    if ((input.textContent === '|' || output.textContent !== '') && !input.textContent.includes(' ')) {
         input.textContent = '';
         output.textContent = '';
     }
