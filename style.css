@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: aliceblue;
 }
 
 .calc-container {
@@ -19,6 +20,7 @@ body {
     background-color: #abbda7;
     border-radius: 0.25em;
     color: #374079;
+    font-weight: bold;
     margin: 5px;
     padding: 5px;
     gap: 20px;
@@ -34,6 +36,10 @@ body {
     background-color: #858585;
     border-radius: 0.4em;
     padding: 10px;
+    border-right: 3px #505050 solid;
+    border-bottom: 3px #505050 solid;
+    border-top: 0.5px #b1b1b1 solid;
+    border-left: 0.5px #b1b1b1 solid;
 }
 
 .buttons {
@@ -76,4 +82,15 @@ button {
     min-height: 50px;
     margin: 5px;
     border-radius: 0.4em;
+}
+
+.num {
+    background-color: #4d4d4d;
+    color: white;
+    font-weight: bold;
+}
+
+.op {
+    background-color: orange;
+    font-weight: bolder;
 }
