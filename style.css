@@ -18,6 +18,10 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #abbda7;
+    border-right: 2px #789471 solid;
+    border-bottom: 2px #789471 solid;
+    border-top: 2px #bcccb9 solid;
+    border-left: 2px #bcccb9 solid;
     border-radius: 0.25em;
     color: #374079;
     font-weight: bold;
@@ -38,8 +42,8 @@ body {
     padding: 10px;
     border-right: 3px #505050 solid;
     border-bottom: 3px #505050 solid;
-    border-top: 0.5px #b1b1b1 solid;
-    border-left: 0.5px #b1b1b1 solid;
+    border-top: 2px #b1b1b1 solid;
+    border-left: 2px #b1b1b1 solid;
 }
 
 .buttons {
